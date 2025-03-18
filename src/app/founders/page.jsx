@@ -9,11 +9,11 @@ export const Founders = () => {
     {/* <ShootingStars /> */}
     {/* <StarsBackground/> */}
     
-    <div className ='w-full  mt-10'>
+    <div className ='flex flex-col justify-center items-center gap-10 w-full min-h-screen bg-gradient-to-b from-black to-red-950 '>
     <h1 className= 'text-4xl text-center'>
       Founders
     </h1> 
-    <div className='flex justify-center items-center'>
+    <div className='  justify-center items-center'>
         <AnimatedTestimonials testimonials={founders} autoplay={true} />
     </div>
     </div>
