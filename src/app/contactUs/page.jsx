@@ -3,7 +3,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { MapPin, Phone, Mail } from "lucide-react"
 
-const ContactUs = () => {
+export const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,7 +26,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-red-950 to-black">
+    <div className="min-h-screen bg-gradient-to-b from-black to-red-950">
       {/* Navigation */}
       
 
@@ -40,12 +40,12 @@ const ContactUs = () => {
           </h1>
           <p className="max-w-md mx-auto">
             Thank you for your interest in our services. Please fill out the form below or e-mail us at{" "}
-            <span className="underline">hello@companymail.com</span>
+            <span className="underline">curiosity4u@gmail.com</span>
           </p>
         </div>
 
         {/* Contact Form Card */}
-        <div className="max-w-4xl mx-auto bg-gradient-to-b from-black to-red-950 rounded-lg shadow-lg overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-gradient-to-b from-red-950 to-black rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row">
             {/* Left Side - Contact Info */}
             <div className="w-full md:w-1/3 p-8 flex flex-col justify-center items-start">
@@ -181,7 +181,7 @@ const ContactUs = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-red-800 text-white py-3 rounded-md hover:bg-teal-600 transition duration-300"
+                    className="w-full bg-red-800 text-white py-3 rounded-3xl hover:bg-green-600 transition duration-300"
                   >
                     SUBMIT
                   </button>

@@ -81,7 +81,7 @@ const ReviewCard = ({
 export const MarqueeDemo  = () => {
   return (
     <div
-    className="w-full relative flex flex-col items-center justify-center sm:overflow-hidden min-h-screen border-b-4 bg-gradient-to-b from-red-950 to-black"
+    className="w-full relative flex flex-col items-center justify-center sm:overflow-hidden min-h-screen   bg-gradient-to-b from-red-950 to-black"
     id="Feedback"
   >
   

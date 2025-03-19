@@ -33,7 +33,7 @@ export const AboutUs = () => {
   return (
     <div className="min-h-screen min-w-full bg-gradient-to-b from-red-950 to-black flex items-center justify-center">
       <div className="text-red-50 w-full  px-4">
-        <h1 className="text-center text-2xl font-bold mb-8 ">About Us</h1>
+        <h1 className="text-center text-2xl font-bold mb-8  ">About Us</h1>
         <div className="relative">
           <div className="absolute left-0 right-0 top-1/2 h-px bg-white transform -translate-y-1/2"></div>
 
