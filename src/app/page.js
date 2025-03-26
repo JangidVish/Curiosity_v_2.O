@@ -25,72 +25,73 @@ export default function Home() {
   useEffect(() => {
     // GSAP animations for each section
     gsap.from(homeRef.current, {
-      opacity: 0,
-      
-      y: 50,
-      duration: 1,
+      opacity: 0.1,
+      y: 20,
+      duration: 2,
       scrollTrigger: {
         trigger: homeRef.current,
         start: "top 80%", // Start animation when the top of the section hits 80% of the viewport
-        end: "bottom 10%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
       },
     });
     gsap.from(youtubeRef.current, {
-      opacity: 0,
+      opacity: 0.1,
       y: 50,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: youtubeRef.current,
         start: "top 80%", // Start animation when the top of the section hits 80% of the viewport
-        end: "bottom 10%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
       },
     });
     gsap.from(marqueeRef.current, {
-      opacity: 0,
+      opacity: 0.1,
       y: 50,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: marqueeRef.current,
         start: "top 80%",
-        end: "bottom 10%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
     });
 
     gsap.from(foundersRef.current, {
-      opacity: 0,
+      opacity: 0.1,
       y: 50,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: foundersRef.current,
         start: "top 80%",
-        end: "bottom 10%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
     });
 
     gsap.from(aboutUsRef.current, {
-      opacity: 0,
+      opacity: 0.1,
       y: 50,
-      duration: 1,
+      duration: 2,
+      ease: "power1.out", // Ease is placed here, outside scrollTrigger
       scrollTrigger: {
         trigger: aboutUsRef.current,
-        start: "top 80%",
-        end: "bottom 10%",
-        toggleActions: "play none none reverse",
+        start: "top 80%", // Start when the top of the element hits 80% of the viewport
+        end: "bottom 20%", // End when the bottom of the element hits 20% of the viewport
+        toggleActions: "play none none reverse", // Play on enter, reverse on leave
+        // scrub: true, // Optional: Add this for smooth scrubbing
       },
     });
 
     gsap.from(contactUsRef.current, {
-      opacity: 0,
+      opacity: 0.1,
       y: 50,
-      duration: 1,
+      duration: 2,
       scrollTrigger: {
         trigger: contactUsRef.current,
         start: "top 80%",
-        end: "bottom 10%",
+        end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
     });
@@ -105,9 +106,8 @@ export default function Home() {
         className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-black to-red-950"
       >
         {/* This is home page */}
-        <div ref = {youtubeRef}>
-        {/* <LatestShorts /> */}
-        </div>
+
+        <LatestShorts />
       </div>
       <div ref={marqueeRef}>
         <MarqueeDemo />
