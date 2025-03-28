@@ -36,34 +36,35 @@ const catalogueData = [
     return (
       <div className="bg-gradient-to-b from-black to-red-950 min-h-screen p-5">
         <h1 className="text-4xl text-center text-white py-5">Catalogue</h1>
-        <div className="flex flex-col gap-8 items-center">
+        <div className="flex flex-col  gap-8 items-center">
           {catalogueData.map((item, index) => (
             <div
               key={index}
-              className={`bg-gray-200 p-6 rounded-2xl shadow-lg flex flex-col md:flex-row max-w-6xl w-full ${
+              className={`text-white p-6 rounded-2xl shadow-lg flex flex-col md:flex-row  w-full lg:w-5/6 justify-center items-center ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               }`}
             >
-              <div className="flex-1 flex  justify-center">
-                <div className=" w-64 h-64 bg-gray-400 rounded-lg overflow-hidden">
+              <div className="flex-1   w-full flex justify-center items-center">
+                <div className=" max-w-full flex justify-center items-center h-auto  rounded-lg overflow-hidden">
                   <Image
+                  className="max-w-1/2 rounded-lg "
                     src={item.image}
                     alt={item.title}
-                    width={256}
-                    height={256}
-                    className="object-cover"
+                    width={1000}                    
+                    height={1000}
+                    // className="object-cover"
                   />
                 </div>
               </div>
-              <div className="flex-1 text-gray-800 mt-4 md:mt-0 md:px-4">
-                <h2 className="text-xl font-bold">{item.title}</h2>
-                <p className="text-sm mt-2">{item.description}</p>
+              <div className="flex-1  justify-center text-white mt-4 md:mt-0 md:px-4 " >
+                <h2 className="text-2xl font-bold">{item.title}</h2>
+                <p className="  text-gray-200 leading-8 text-lg xl:w-3/4 mt-2">{item.description}</p>
                 <div className="mt-4 flex gap-4">
                   {item.buttons.map((button, idx) => (
                     <a
                       key={idx}
                       href={button.link}
-                      className="bg-gray-700 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-gray-800"
+                      className="font-bold bg-gray-700 text-white px-4 py-2 rounded-lg text-sm shadow hover:bg-gray-800"
                     >
                       {button.text}
                     </a>
