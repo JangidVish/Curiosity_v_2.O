@@ -9,6 +9,7 @@ import { LatestShorts } from './youtube/page.jsx';
 import { MarqueeDemo } from '../app/components/FeedbackCarosel.jsx';
 import { AboutUs } from '@/app/aboutUs/page.jsx';
 import { ContactUs } from '@/app/contactUs/page.jsx';
+import Navbar from "./components/Navbar/Navbar";
 
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -99,6 +100,7 @@ export default function Home() {
 
   return (
     <>
+    <Navbar/>
       <ShootingStars />
       <StarsBackground />
       <div

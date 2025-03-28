@@ -34,7 +34,7 @@ const catalogueData = [
   ];
   export const Catalogue = () => {
     return (
-      <div className="bg-gradient-to-b from-black to-red-950 min-h-screen p-5">
+      <div className="bg-gradient-to-b from-black to-red-950 min-h-screen  p-5">
         <h1 className="text-4xl text-center text-white py-5">Catalogue</h1>
         <div className="flex flex-col  gap-8 items-center">
           {catalogueData.map((item, index) => (
