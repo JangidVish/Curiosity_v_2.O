@@ -24,85 +24,65 @@ export default function Home() {
   const contactUsRef = useRef(null);
 
   useEffect(() => {
-    // GSAP animations for each section
-    gsap.from(homeRef.current, {
-      opacity: 0.1,
-      y: 20,
-      duration: 2,
-      scrollTrigger: {
-        trigger: homeRef.current,
-        start: "top 80%", // Start animation when the top of the section hits 80% of the viewport
-        end: "bottom 20%",
-        toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
-      },
-    });
-    gsap.from(youtubeRef.current, {
-      opacity: 0.1,
-      y: 50,
-      duration: 2,
-      scrollTrigger: {
-        trigger: youtubeRef.current,
-        start: "top 80%", // Start animation when the top of the section hits 80% of the viewport
-        end: "bottom 20%",
-        toggleActions: "play none none reverse", // Play animation on enter, reverse on leave
-      },
-    });
-    gsap.from(marqueeRef.current, {
-      opacity: 0.1,
-      y: 50,
-      duration: 2,
-      scrollTrigger: {
-        trigger: marqueeRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    // Set initial state with GSAP
+    const sections = [
+      homeRef.current,
+      youtubeRef.current,
+      marqueeRef.current,
+      foundersRef.current,
+      aboutUsRef.current,
+      contactUsRef.current
+    ];
 
-    gsap.from(foundersRef.current, {
-      opacity: 0.1,
-      y: 50,
-      duration: 2,
-      scrollTrigger: {
-        trigger: foundersRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    // Set initial state
+    gsap.set(sections, { opacity: 0, y: 50 });
 
-    gsap.from(aboutUsRef.current, {
-      opacity: 0.1,
-      y: 50,
-      duration: 2,
-      ease: "power1.out", // Ease is placed here, outside scrollTrigger
-      scrollTrigger: {
-        trigger: aboutUsRef.current,
-        start: "top 80%", // Start when the top of the element hits 80% of the viewport
-        end: "bottom 20%", // End when the bottom of the element hits 20% of the viewport
-        toggleActions: "play none none reverse", // Play on enter, reverse on leave
-        // scrub: true, // Optional: Add this for smooth scrubbing
-      },
-    });
+    // Create animations array for cleanup
+    const animations = [];
 
-    gsap.from(contactUsRef.current, {
-      opacity: 0.1,
-      y: 50,
-      duration: 2,
-      scrollTrigger: {
-        trigger: contactUsRef.current,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      },
-    });
+    // Helper function to create animations
+    const createAnimation = (ref, y = 50) => {
+      const anim = gsap.to(ref.current, {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play none none reset",
+          markers: false // Set to true for debugging
+        }
+      });
+      animations.push(anim);
+    };
+
+    // Create animations for each section
+    createAnimation(homeRef, 20);
+    createAnimation(youtubeRef);
+    createAnimation(marqueeRef);
+    createAnimation(foundersRef);
+    createAnimation(aboutUsRef);
+    createAnimation(contactUsRef);
+
+    // Cleanup function
+    return () => {
+      animations.forEach(anim => {
+        anim.scrollTrigger?.kill();
+        anim.kill();
+      });
+      ScrollTrigger.clearMatchMedia();
+      ScrollTrigger.refresh();
+    };
   }, []);
+
 
   return (
     <>
     <Navbar/>
-      <ShootingStars />
-      <StarsBackground />
+       {/* <ShootingStars />
+      <StarsBackground />  */}
       <div
         ref={homeRef}
         className="w-full min-h-screen flex justify-center items-center bg-gradient-to-b from-black to-red-950"
