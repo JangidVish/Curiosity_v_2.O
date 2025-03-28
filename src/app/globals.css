@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+
 :root {
   
   
@@ -32,10 +33,13 @@
 
 
 body {
+
   /* background: linear-gradient(170deg, #000000 60%, #7F1D1D 100%); */
   z-index: 0;
   background: #000;
-  color: var(--foreground);
+
+  /* background: linear-gradient(180deg, #000000 60%, #7F1D1D 100%); */
+
   font-family: Arial, Helvetica, sans-serif;
 }
 .timeline ol {
