@@ -37,7 +37,7 @@ body {
   /* background: linear-gradient(170deg, #000000 60%, #7F1D1D 100%); */
   z-index: 0;
   background: #000;
-
+  color:white;
   /* background: linear-gradient(180deg, #000000 60%, #7F1D1D 100%); */
 
   font-family: Arial, Helvetica, sans-serif;
@@ -65,4 +65,9 @@ body {
 .timeline ol li:nth-child(even) div::before {
   border-width: 8px 0 0 8px;
   border-color: transparent transparent transparent white;
+}
+/* Ensure smooth transitions */
+[data-scroll-section] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
