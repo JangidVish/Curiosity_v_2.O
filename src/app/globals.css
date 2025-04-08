@@ -71,3 +71,7 @@ body {
   will-change: transform, opacity;
   backface-visibility: hidden;
 }
+iframe {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}

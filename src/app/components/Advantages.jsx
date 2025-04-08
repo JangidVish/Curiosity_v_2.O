@@ -35,7 +35,6 @@ const whyPraviData = [
   },
 ];
 
-
 const WhyPraviCard = ({ title, description, position }) => (
   <motion.div
     initial={{ opacity: 0, x: position === "left" ? -50 : 50 }}
@@ -54,15 +53,15 @@ const WhyPravi = () => {
   const rightItems = whyPraviData.filter((item) => item.position === "right");
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-black to-red-950 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto relative">
+    <section className="relative min-h-screen bg-gradient-to-b from-black via-red-950 to-black py-20 px-4 sm:px-6 lg:px-8">
+      <div className="w-[85%] mx-auto relative">
         {/* Center Circle */}
         <motion.div 
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-grey-800 to-red-800 rounded-full flex flex-col justify-center items-center shadow-2xl z-10"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-to-br from-red-950 to-black rounded-full flex flex-col justify-center items-center shadow-2xl z-10"
         >
           <h2 className="text-2xl font-bold text-white mb-2">Why Pravi?</h2>
           {/* <span className="text-gray-200 text-sm">Innovation Through Education</span> */}
@@ -82,7 +81,7 @@ const WhyPravi = () => {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col  items-center  space-y-8 lg:space-y-12 mt-8 lg:mt-0">
+          <div className="flex flex-col items-center space-y-8 lg:space-y-12 mt-8 lg:mt-0">
             {rightItems.map((item, index) => (
               <WhyPraviCard
                 key={`right-${index}`}

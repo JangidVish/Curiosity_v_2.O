@@ -1,5 +1,5 @@
-import { cn } from "@/app/lib/utils";
-import {InfiniteMovingCards} from "@/app/components/ui/infinite-moving-cards";
+import { cn } from "../../app/lib/utils";
+import {InfiniteMovingCards} from "./ui/infinite-moving-cards";
 
 const reviews = [
   {
@@ -78,25 +78,27 @@ const ReviewCard = ({
   );
 };
 
-export const MarqueeDemo  = () => {
+export const MarqueeDemo = () => {
   return (
-    <div
-    className="w-full relative flex flex-col items-center justify-center sm:overflow-hidden min-h-screen   bg-gradient-to-b from-red-950 to-black"
-    id="Feedback"
-  >
-  
-    <h1 className="text-4xl font-bold text-center mb-8 z-10">Reviews</h1>
-    <div className=" relative flex h-[400px] w-full flex-col items-center justify-center  rounded-lg bg-background md:shadow-xl">
-      <InfiniteMovingCards items={reviews}  className="[--duration:20s] bg-black md:w-3/4" >
-        {/* {secondRow.map((review) => (
-          <ReviewCard key={review.name} {...review} />
-        ))
-        } */}
-      </InfiniteMovingCards>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 dark:from-background"></div>
-    </div>
+    <div 
+      className=" h-[75vh] relative flex flex-col items-center justify-center sm:overflow-hidden bg-gradient-to-b from-black via-red-950 to-black  mx-auto my-12"
+      id="Feedback"
+    >
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8 z-10 text-white">
+        Reviews
+      </h1>
+      <div className="relative flex h-[60vh] w-full max-w-[90vw] flex-col items-center justify-center">
+        <InfiniteMovingCards 
+          items={reviews}  
+          className="[--duration:20s] bg-transparent w-full md:w-4/5"
+          direction="right"
+        >
+          {reviews.map((review) => (
+            <ReviewCard key={review.name} {...review} />
+          ))}
+        </InfiniteMovingCards>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 dark:from-background"></div>
+      </div>
     </div>
   );
-}
-
-export default MarqueeDemo;
+};
