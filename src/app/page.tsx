@@ -13,6 +13,7 @@ import { LatestShorts } from './components/youtube';
 import { MarqueeDemo } from './components/FeedbackCarosel.jsx';
 import Footer from "./components/Footer";
 import CuriosityLogo from "../../public/Curiosity logo.png";
+import Services from './components/Services';
 
 // Pages/Sections
 import { Founders } from './components/Founders';
@@ -29,15 +30,11 @@ const projects = [
   {
     title: "Pravi",
     description: "Pravi, embodying the essence of mindfulness like a focused river carving through mountains, nurtures young minds under Curiosity's guidance. We channel curiosity into mindful innovation, teaching the importance of Intellectual Property Rights. Through our programs, we cultivate growth and development, empowering our champs to navigate the future with wisdom and creativity, transforming their ideas into lasting legacies.",
-    link: "/parvi",
+    link: "/pravi",
     learnmore: true,
     img: "/Logo.png"
   },
-  {
-    title: "Our Product Based Platform",
-    description: "Coming Soon...",
-    link: "/",
-  },
+ 
 ];
 
 export default function Home() {
@@ -171,6 +168,9 @@ export default function Home() {
           >
             {/* This is home page */}
             <LatestShorts />
+          </div>
+          <div className="flex justify-center items-center">
+            <Services array={projects} Heading="Services" />
           </div>
           <div ref={aboutUsRef}>
             <AboutUs />

@@ -40,7 +40,7 @@ export const ContactUs = () => {
           </h1>
           <p className="max-w-md mx-auto">
             Thank you for your interest in our services. Please fill out the form below or e-mail us at{" "}
-            <span className="underline">curiosity4u@gmail.com</span>
+            <span className="underline">support@curiosity4u.in</span>
           </p>
         </div>
 
@@ -63,7 +63,7 @@ export const ContactUs = () => {
                   </div>
                   <div className="flex items-center">
                     <Mail className="text-teal-500 mr-3" size={20} />
-                    <p>curiosity4u@gmail.com</p>
+                    <p>support@curiosity4u.in</p>
                   </div>
                 </div>
               </div>
